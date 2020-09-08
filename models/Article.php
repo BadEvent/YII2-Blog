@@ -78,7 +78,7 @@ class Article extends \yii\db\ActiveRecord
 
     public function getImage()
     {
-        return ($this->image) ? '/uploads/' . $this->image : '/no-mage.jpg';
+        return ($this->image) ? '/uploads/' . $this->image : '/no-image.jpg';
     }
 
     public function beforeDelete()
