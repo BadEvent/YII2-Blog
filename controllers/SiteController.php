@@ -131,5 +131,10 @@ class SiteController extends Controller
         return $this->render('single');
     }
 
+    public function actionCategory()
+    {
+        return $this->render('category');
+    }
+
 
 }
