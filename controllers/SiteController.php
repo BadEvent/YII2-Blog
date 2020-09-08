@@ -3,11 +3,12 @@
 namespace app\controllers;
 
 use app\models\Article;
+use app\models\Category;
+use app\models\CommentForm;
 use Yii;
 use yii\data\Pagination;
 use yii\filters\AccessControl;
 use yii\web\Controller;
-use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
@@ -80,7 +81,7 @@ class SiteController extends Controller
 
         $popular = Article::find()->orderBy('viewed desc')->limit(3)->all();
         $recent = Article::find()->orderBy('date desc')->limit(4)->all();
-        $categories = Article::find()->all();
+        $categories = Category::find()->all();
 
         return $this->render('index',[
             'articles'=>$articles,
