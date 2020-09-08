@@ -175,6 +175,7 @@ class ArticleController extends Controller
     {
         $article = $this->findModel($id);
         $selectedTags = $article->getSelectedTags();
+        var_dump($selectedTags);die();
         $tags = [
             1=>'tag 1',
             2=>'tag 2'
