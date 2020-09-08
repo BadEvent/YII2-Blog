@@ -174,12 +174,10 @@ class ArticleController extends Controller
     public function actionSetTags($id)
     {
         $article = $this->findModel($id);
+
         $selectedTags = $article->getSelectedTags();
-        var_dump($selectedTags);die();
-        $tags = [
-            1=>'tag 1',
-            2=>'tag 2'
-        ];
+
+        $tags = ArrayHelper::map(Tag::find()->all(), 'id', 'title');
 
         return $this->render('tags', [
             'selectedTags'=>$selectedTags,
