@@ -83,11 +83,11 @@ use yii\helpers\Url;
         'options'=>['class'=>'form-horizontal contact-form', 'role'=>'form']]) ?>
                         <div class="form-group">
                             <div class="col-md-12">
-<?= $form->field($commentForm, 'comment')->textarea(['class'=>'form-control', 'placeholder'=>'Write Massage']) ; ?>
+<?= $form->field($commentForm, 'comment')->textarea(['class'=>'form-control', 'placeholder'=>'Write Massage'])->label(false) ; ?>
 
                             </div>
                         </div>
-                        <a href="#" class="btn send-btn">Post Comment</a>
+                        <button type="submit" class="btn send-btn">Post Comment</button>
 <?php \yii\widgets\ActiveForm::end() ?>
 
                 </div><!--end leave comment-->
