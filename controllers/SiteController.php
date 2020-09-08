@@ -79,6 +79,26 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionView($id)
+    {
+        $article = Article::findOne($id);
+        $popular = Article::getPopular();
+        $recent = Article::getRecent();
+        $categories = Category::getAll();
+
+        return $this->render('single',[
+            'article'=>$article,
+            'popular'=>$popular,
+            'recent'=>$recent,
+            'categories'=>$categories
+        ]);
+    }
+
+    public function actionCategory()
+    {
+        return $this->render('category');
+    }
+
     /**
      * Login action.
      *
@@ -141,15 +161,7 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
-    public function actionView()
-    {
-        return $this->render('single');
-    }
 
-    public function actionCategory()
-    {
-        return $this->render('category');
-    }
 
 
 }
