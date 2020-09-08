@@ -110,7 +110,6 @@ class Article extends \yii\db\ActiveRecord
 
     public function getSelectedTags()
     {
-        $selectedTags = $this->getTags()->select('id')->asArray()->all();
-        var_dump($selectedTags);die();
+        return $selectedTags = $this->getTags()->select('id')->asArray()->all();
     }
 }
