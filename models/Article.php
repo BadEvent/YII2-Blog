@@ -92,8 +92,19 @@ class Article extends \yii\db\ActiveRecord
         return $this->hasOne(Category::className(), ['id' => 'category_id']);
     }
 
-    public function saveCategory()
+    public function saveCategory($category_id)
     {
-        
+        $category = Category::findOne($category_id);
+        if($category != null)
+        {
+            $this->link('category', $category);
+            return true;
+        }
+    }
+
+    public function getTags()
+    {
+        return $this->hasMany(Tag::className(), ['id' => 'tag_id'])
+            ->viaTable('article_tag', ['article_id' => 'id']);
     }
 }
