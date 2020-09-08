@@ -2,6 +2,8 @@
 
 namespace app\modules\admin\controllers;
 
+use app\models\ImageUpload;
+use yii\web\UploadedFile;
 use Yii;
 use app\models\Article;
 use app\models\ArticleSearch;
@@ -128,6 +130,6 @@ class ArticleController extends Controller
     {
         $model = new ImageUpload;
 
-        return $this->render('image');
+        return $this->render('image', ['model' => $model]);
     }
 }
