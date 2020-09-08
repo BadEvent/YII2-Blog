@@ -75,12 +75,17 @@ class SiteController extends Controller
 
         // limit the query using the pagination and retrieve the articles
         $articles = $query->offset($pagination->offset)
-            ->limit($pagination->limit)
-            ->all();
+                          ->limit($pagination->limit)
+                          ->all();
+
+        $popular = Article::find()->orderBy('viewed desc')->all();
+        $recent = Article::find()->orderBy('date desc')->all();
 
         return $this->render('index',[
             'articles'=>$articles,
-            'pagination'=>$pagination
+            'pagination'=>$pagination,
+            'popular'=>$popular,
+            'recent'=>$recent
         ]);
     }
 
