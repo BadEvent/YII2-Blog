@@ -4,6 +4,7 @@ namespace app\modules\admin\controllers;
 
 use app\models\Category;
 use app\models\ImageUpload;
+use app\models\Tag;
 use yii\helpers\ArrayHelper;
 use yii\web\UploadedFile;
 use Yii;
@@ -156,8 +157,10 @@ class ArticleController extends Controller
         if(Yii::$app->request->isPost)
         {
             $category = Yii::$app->request->post('category');
-            $article->saveCategory($category);
-            return $this->redirect(['view', 'id'=>$article->id]);
+            if ($article->saveCategory($category))
+            {
+                return $this->redirect(['view', 'id'=>$article->id]);
+            }
         }
 
         return $this->render('category', [
@@ -166,5 +169,11 @@ class ArticleController extends Controller
             'categories'=>$categories
         ]);
 
+    }
+
+    public function actionSetTags($id)
+    {
+        $tag = Tag::findOne(1);
+        var_dump($tag->articles);
     }
 }
