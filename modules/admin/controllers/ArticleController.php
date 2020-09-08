@@ -148,7 +148,9 @@ class ArticleController extends Controller
     {
         $article = $this->findModel($id);
 
-
+        return $this->render('category', [
+            'article' => $article,
+        ]);
 
     }
 }
