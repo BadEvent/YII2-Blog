@@ -12,7 +12,7 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= Html::dropDownList('category', $article->category->id, [
+    <?= Html::dropDownList('category', $selectedCategory, [
             1=>'cat 1',
             2=>'cat 2',
             3=>'cat 3'
