@@ -174,9 +174,15 @@ class ArticleController extends Controller
     public function actionSetTags($id)
     {
         $article = $this->findModel($id);
+        $selectedTags = [2];
+        $tags = [
+            1=>'tag 1',
+            2=>'tag 2'
+        ];
 
         return $this->render('tags', [
-            'article'=>$article
+            'selectedTags'=>$selectedTags,
+            'tags'=>$tags
         ]);
     }
 }
