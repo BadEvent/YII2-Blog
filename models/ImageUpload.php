@@ -15,7 +15,10 @@ class ImageUpload extends Model{
 
         $this->image = $file;
 
-        unlink(Yii::getAlias('@web') . 'uploads/' . $currentImage);
+        if(file_exists(Yii::getAlias('@web') . 'uploads/' . $currentImage))
+        {
+            unlink(Yii::getAlias('@web') . 'uploads/' . $currentImage);
+        }
 
         $filename = strtolower(md5(uniqid($file->baseName)) . '.' . $file->extension);
 
