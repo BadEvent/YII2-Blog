@@ -88,7 +88,7 @@ class SiteController extends Controller
         $recent = Article::getRecent();
         $categories = Category::getAll();
         $currentTags = $article->tags;
-        $comments = $article->comments;
+        $comments = $article->getArticleComments();
         $commentForm = new CommentForm();
 
 
