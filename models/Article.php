@@ -182,4 +182,10 @@ class Article extends \yii\db\ActiveRecord
         Yii::$app->getSession()->setFlash('comment', 'Your comment will be added soon.');
         return $this->getComments()->where(['status'=>1])->all();
     }
+
+    public function viewedCounter()
+    {
+        $this->viewed += 1;
+        return $this->save(false);
+    }
 }
