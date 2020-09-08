@@ -16,6 +16,14 @@ class Module extends \yii\base\Module
     /**
      * {@inheritdoc}
      */
+
+    public function behaviors()
+    {
+        return [
+            'access'
+        ];
+    }
+
     public function init()
     {
         parent::init();
