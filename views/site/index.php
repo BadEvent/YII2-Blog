@@ -33,7 +33,7 @@ use yii\widgets\LinkPager;
                             </div>
                         </div>
                         <div class="social-share">
-                            <span class="social-share-title pull-left text-capitalize">От <a href="#">Rubel</a> в <?= $article->date?></span>
+                            <span class="social-share-title pull-left text-capitalize">От <a href="#">Rubel</a> в <?= $article->getDate();?></span>
                             <ul class="text-center pull-right">
                                 <li><a class="s-facebook" href="#"><i class="fa fa-eye"></i></a></li><?= (int) $article->viewed?>
                             </ul>
@@ -65,7 +65,7 @@ use yii\widgets\LinkPager;
 
                             <div class="p-content">
                                 <a href="#" class="text-uppercase"><?= $article->title; ?></a>
-                                <span class="p-date"><?= $article->date; ?></span>
+                                <span class="p-date"><?= $article->getDate(); ?></span>
 
                             </div>
                         </div>
@@ -87,7 +87,7 @@ use yii\widgets\LinkPager;
                                 </div>
                                 <div class="p-content">
                                     <a href="#" class="text-uppercase"><?= $article->title; ?></a>
-                                    <span class="p-date"><?= $article->date; ?></span>
+                                    <span class="p-date"><?= $article->getDate(); ?></span>
                                 </div>
                             </div>
                         </div>
@@ -99,8 +99,8 @@ use yii\widgets\LinkPager;
 
                             <?php foreach ($categories as $category): ?>
                             <li>
-                                <a href="#"><?= $category->title ?></a>
-                                <span class="post-count pull-right"> (<?= $category->getArticles()->count(); ?>)</span>
+                                <a href="#"><?= $category->title; ?></a>
+                                <span class="post-count pull-right"> (<?= $category->id; ?>)</span>
                             </li>
                             <?php endforeach; ?>
                         </ul>
