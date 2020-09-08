@@ -13,6 +13,7 @@ class ImageUpload extends Model{
     public function uploadFile(UploadedFile $file)
     {
         $file->saveAs(Yii::getAlias('@web') . 'uploads/' . $file->name);
+        return $file->name;
     }
 
 }
