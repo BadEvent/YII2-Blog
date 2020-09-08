@@ -63,6 +63,11 @@ class Article extends \yii\db\ActiveRecord
             'category_id' => 'Category ID',
         ];
     }
-    
+
+    public function saveImage($filename)
+    {
+        $this->image = $filename;
+        return $this->save(false);
+    }
 
 }
