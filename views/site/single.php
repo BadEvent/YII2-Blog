@@ -22,13 +22,14 @@ use yii\helpers\Url;
                             <?= $article->content?>
                         </div>
                         <div class="decoration">
-                            <a href="#" class="btn btn-default">Decoration</a>
-                            <a href="#" class="btn btn-default">Decoration</a>
+                            <?php foreach($currentTags as $tag): ?>
+                                <a href="#" class="btn btn-default"><?php echo $tag['title']; ?></a>
+                            <?php endforeach; ?>
                         </div>
 
                         <div class="social-share">
 							<span
-                                    class="social-share-title pull-left text-capitalize">By <?= $article->author->name?> On <?= $article->getDate();?></span>
+                                    class="social-share-title pull-left text-capitalize">By <?= $article->user_id->name?> On <?= $article->getDate();?></span>
                             <ul class="text-center pull-right">
                                 <li><a class="s-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
                                 <li><a class="s-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
