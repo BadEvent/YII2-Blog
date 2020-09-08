@@ -89,6 +89,7 @@ class SiteController extends Controller
         $categories = Category::getAll();
         $currentTags = $article->tags;
         $comments = $article->comments;
+        $commentForm = new CommentForm();
 
 
         return $this->render('single',[
@@ -96,7 +97,9 @@ class SiteController extends Controller
             'popular'=>$popular,
             'recent'=>$recent,
             'categories'=>$categories,
-            'currentTags'=>$currentTags
+            'currentTags'=>$currentTags,
+            'comments'=>$comments,
+            'commentForm'=>$commentForm
         ]);
     }
 
