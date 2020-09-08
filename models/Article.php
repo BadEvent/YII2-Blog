@@ -39,7 +39,7 @@ class Article extends \yii\db\ActiveRecord
         return [
             [['title'], 'required'],
             [['title', 'description', 'content'], 'string'],
-            [['date'], 'date', 'format'=>'php:Y-m-d'],
+            [['date'], 'date', 'format' => 'php:Y-m-d'],
             [['date'], 'default', 'value' => date('Y-m-d')],
             [['title'], 'string', 'max' => 255]
         ];
@@ -63,24 +63,6 @@ class Article extends \yii\db\ActiveRecord
             'category_id' => 'Category ID',
         ];
     }
+    
 
-    /**
-     * Gets query for [[ArticleTags]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-    public function getArticleTags()
-    {
-        return $this->hasMany(ArticleTag::className(), ['article_id' => 'id']);
-    }
-
-    /**
-     * Gets query for [[Comments]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-    public function getComments()
-    {
-        return $this->hasMany(Comment::className(), ['article_id' => 'id']);
-    }
 }
