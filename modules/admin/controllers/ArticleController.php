@@ -173,7 +173,10 @@ class ArticleController extends Controller
 
     public function actionSetTags($id)
     {
-        $tag = Tag::findOne(1);
-        var_dump($tag->articles);
+        $article = $this->findModel($id);
+
+        return $this->render('tags', [
+            'article'=>$article
+        ]);
     }
 }
