@@ -78,14 +78,16 @@ class SiteController extends Controller
                           ->limit($pagination->limit)
                           ->all();
 
-        $popular = Article::find()->orderBy('viewed desc')->all();
-        $recent = Article::find()->orderBy('date desc')->all();
+        $popular = Article::find()->orderBy('viewed desc')->limit(3)->all();
+        $recent = Article::find()->orderBy('date desc')->limit(4)->all();
+        $categories = Article::find()->all();
 
         return $this->render('index',[
             'articles'=>$articles,
             'pagination'=>$pagination,
             'popular'=>$popular,
-            'recent'=>$recent
+            'recent'=>$recent,
+            'categories'=>$categories
         ]);
     }
 
