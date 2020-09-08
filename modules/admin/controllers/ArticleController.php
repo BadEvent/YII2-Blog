@@ -147,9 +147,10 @@ class ArticleController extends Controller
     public function actionSetCategory($id)
     {
         $article = $this->findModel($id);
-
+        $selectedCategory = $article->category->id;
         return $this->render('category', [
             'article' => $article,
+            'selectedCategory' => $selectedCategory
         ]);
 
     }
