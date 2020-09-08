@@ -49,11 +49,6 @@ use yii\helpers\Url;
                     <?php foreach ($comments as $comment): ?>
 
                         <div class="bottom-comment"><!--bottom comment-->
-                            <h4>3 comments</h4>
-
-                            <div class="comment-img">
-                                <img class="img-circle" src="assets/images/comment-img.jpg" alt="">
-                            </div>
 
                             <div class="comment-text">
                                 <a href="#" class="replay btn pull-right"> <?= $comment->user->name; ?></a>
