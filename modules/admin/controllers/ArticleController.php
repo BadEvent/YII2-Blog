@@ -130,7 +130,10 @@ class ArticleController extends Controller
     {
         $model = new ImageUpload;
 
-        if(Yii::$app->request->isPost){
+        if(Yii::$app->request->isPost)
+        {
+            $article = $this->findModel($id);
+            var_dump($article->title);die();
             $file = UploadedFile::getInstance($model, 'image');
             $model->uploadFile($file);
         }
