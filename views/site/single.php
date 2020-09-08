@@ -19,8 +19,10 @@
                             <p><?= $article->content; ?></p>
                         </div>
                         <div class="decoration">
-                            <a href="#" class="btn btn-default">Decoration</a>
-                            <a href="#" class="btn btn-default">Decoration</a>
+
+                            <?php foreach($currentTags as $tag): ?>
+                            <a href="#" class="btn btn-default"><?php echo $tag['title']; ?></a>
+                            <?php endforeach; ?>
                         </div>
 
                         <div class="social-share">
@@ -46,7 +48,7 @@
 
                     <div class="comment-text">
                         <a href="#" class="replay btn pull-right"> Replay</a>
-                        <h5>Rubel Miah</h5>
+                        <h5>Admin</h5>
 
                         <p class="comment-date">
                             December, 02, 2015 at 5:57 PM
@@ -67,22 +69,6 @@
 
 
                     <form class="form-horizontal contact-form" role="form" method="post" action="#">
-                        <div class="form-group">
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Name">
-                            </div>
-                            <div class="col-md-6">
-                                <input type="email" class="form-control" id="email" name="email"
-                                       placeholder="Email">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-12">
-                                <input type="text" class="form-control" id="subject" name="subject"
-                                       placeholder="Website url">
-                            </div>
-                        </div>
                         <div class="form-group">
                             <div class="col-md-12">
 										<textarea class="form-control" rows="6" name="message"
