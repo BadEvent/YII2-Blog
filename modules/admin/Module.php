@@ -1,7 +1,7 @@
 <?php
 
 namespace app\modules\admin;
-
+use Yii;
 use yii\filters\AccessControl;
 
 /**
@@ -10,9 +10,10 @@ use yii\filters\AccessControl;
 class Module extends \yii\base\Module
 {
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public $layout = '/admin';
+
     public $controllerNamespace = 'app\modules\admin\controllers';
 
     /**
