@@ -147,6 +147,16 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
+    public function actionComment($id)
+    {
+        $model = new CommentForm();
+
+        $model->load(Yii::$app->request->post());
+        if($model->saveComment($id))
+        {
+            return $this->redirect(['site/view', 'id'=>$id]);
+        }
+    }
 
 
 
