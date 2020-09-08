@@ -50,7 +50,7 @@ $config = [
             'rules' => [
             ],
         ],
-        
+
     ],
     'modules' => [
         'admin' => [
