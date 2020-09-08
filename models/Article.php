@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "article".
@@ -110,6 +111,7 @@ class Article extends \yii\db\ActiveRecord
 
     public function getSelectedTags()
     {
-        return $selectedTags = $this->getTags()->select('id')->asArray()->all();
+        $selectedIds = $this->getTags()->select('id')->asArray()->all();
+        return ArrayHelper::getColumn($selectedIds, 'id');
     }
 }
